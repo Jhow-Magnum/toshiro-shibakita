@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    ports:
+      - "80:80"
+    networks:
+      - rede-projeto
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: senha_segura
+      MYSQL_DATABASE: meubanco
+    volumes:
+      - ./banco.sql:/docker-entrypoint-initdb.d/banco.sql
+    networks:
+      - rede-projeto
+
+networks:
+  rede-projeto:

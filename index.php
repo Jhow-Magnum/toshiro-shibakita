@@ -13,9 +13,9 @@ header('Content-Type: text/html; charset=iso-8859-1');
 
 echo 'Versao Atual do PHP: ' . phpversion() . '<br>';
 
-$servername = "54.234.153.24";
+$servername = "db";
 $username = "root";
-$password = "Senha123";
+$password = "senha_segura";
 $database = "meubanco";
 
 // Criar conexão
